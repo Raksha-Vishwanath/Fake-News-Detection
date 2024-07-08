@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Raleway:300,700|Pacifico|Press+Start+2P|Sigmar+One');
+        
+
+        p{
+            font-family: 'Raleway', Helvetica, Arial, sans-serif;
+	margin: 0;
+	padding: 5vw;
+	-webkit-transition: all 300ms ease;
+	transition: all 300ms ease;
+    font-size: 7vw;
+	margin: 0;
+	-webkit-transition: all 300ms ease;
+	transition: all 300ms ease;	
+    font-weight: 700;
+}
+
+        .red
+        {
+  color: red;
+    font-size: 2rem;
+    opacity: 0;
+    transform: scale(0.5);
+    animation: zoomIn 1s forwards;
+        }
+
+        .green
+        {
+            color: green;
+    font-size: 2rem;
+    opacity: 0;
+    transform: scale(0.5);
+    animation: zoomIn 1s forwards;
+        }
+    
+    @keyframes zoomIn {
+        0% {
+            opacity: 0;
+            transform: scale(0.5);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    .red,.green {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.button:hover {
+    background-color: darkblue;
+}
+
+      </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classification Result</title>
+</head>
+<body style = "  background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat-back.svg');
+background-position: center;
+background-repeat: repeat;
+background-size: 7%;
+background-color: #fff;">
+
+    <h1 style = " font-size: 3rem;
+     font-family: 'Raleway', Helvetica, Arial, sans-serif;
+    background: black;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    animation: glow 2s infinite alternate;">Classification Result</h1>
+    <p class="result">
+        {% if prediction == 0 %}
+          <span class="red">Beware! The news you are reading is Fake</span>
+        {% else %}
+          <span class="green">The news you are reading is Real</span>
+        {% endif %}
+      </p>
+      <p class="result">
+        {% if prediction == 0 %}
+          <span class="red" style="font-size: 180px;">👎</span>
+        {% else %}
+          <span class="green" style="font-size: 180px;">👍</span>
+        {% endif %}
+      </p>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake News Detector</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+    color: #555;
+}
+
+input, textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #555;
+}
+
+.button {
+    padding: 10px;
+    margin-top: 20px;
+    background: #313340;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: #0056b3;
+}
+
+
+    </style>
+</head>
+<body ,  style=" background: linear-gradient(135deg, #696e87, #b2bde0, #9fd7fa);
+padding: 20px 40px;
+border-radius: 10px;
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+">
+    <div class="container">
+        <h1 style = " margin-bottom: 20px;
+        text-align: center;
+        font-size: 2rem;
+        text-shadow: 2px 2px 5px rgba(57, 52, 52, 0.3);">Fake News Detection</h1><br>
+        <form action="/classify" method="post" id="fakeNewsForm">
+            <label for="statement">Statement:</label><br>
+            <textarea id="statement" name="statement" required></textarea><br><br>
+
+            <label for="subject">Subject:</label><br>
+            <input type="text" id="subject" name="subject" required><br><br>
+
+            <label for="speaker">Speaker:</label><br>
+            <input type="text" id="speaker" name="speaker" required><br><br>
+
+            <label for="jobTitle">Speaker Job Title:</label><br>
+            <input type="text" id="job_title" name="job_title" required><br><br>
+
+            <label for="stateInfo">State Info:</label><br>
+            <input type="text" id="state_info" name="state_info" required><br><br>
+
+            <label for="partyAffiliation">Party Affiliation:</label><br>
+            <input type="text" id="party_affiliation" name="party_affiliation" required><br><br>
+
+            <label for="context">Context:</label><br>
+            <input type="text" id="context" name="context" required><br><br>
+
+            <label for="realCounts">Real Counts:</label><br>
+            <input type="number" id="real_counts" name="real_counts" required><br><br>
+
+            <label for="fakeCounts">Fake Counts:</label><br>
+            <input type="number" id="fake_counts" name="fake_counts" required><br><br>
+
+            <input type = "submit" class = "button" value = "Classify" style="font-size: large;">
+        </form>
+</body>
+</html>
